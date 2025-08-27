@@ -1,0 +1,113 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  background-image: url("images/chapter-of-the-year.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  animation: sharpen 1.5s forwards;
+  transition: opacity .4s ease-in-out;
+  will-change: opacity;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+  z-index: 1; /* overlay above background */
+}
+
+.title {
+  font-size: 100px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.part1 {
+  display: inline-block;
+  animation: loop1 3s linear infinite;
+}
+
+.part2 {
+  display: inline-block;
+  animation: loop2 3s linear infinite;
+  overflow: hidden;
+}
+
+.fbla {
+  font-size: 10rem;
+  font-weight: bolder;
+  margin-left: 100px;
+}
+
+/* typing + erasing loop for part1 */
+@keyframes loop1 {
+  0% { width: 0; }
+  50% { width: 4.2ch; } /* type */
+  100% { width: 0; }        /* erase */
+}
+
+/* typing + erasing loop for part2 */
+@keyframes loop2 {
+  0% { width: 0; }
+  50% { width: 3.74ch; } /* type */
+  100% { width: 0; }        /* erase */
+}
+
+
+@keyframes sharpen {
+  from { filter: blur(10px); }
+  to { filter: blur(0px); }
+}
+
+.fbla-text {
+  margin-left: 100px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 70px;
+  }
+  
+  .fbla {
+    font-size: 5rem;
+    margin: 0;
+  }
+
+  .fbla-text {
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.fbla-logo {
+  width: 30%;
+}
+
