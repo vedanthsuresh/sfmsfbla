@@ -26,6 +26,11 @@
   z-index: 1; /* overlay above background */
 }
 
+.fbla-section {
+  display: flex;
+  align-items: stretch; /* makes children equal height */
+}
+
 .title {
   font-size: 100px;
   position: relative;
@@ -49,7 +54,8 @@
 .fbla {
   font-size: 10rem;
   font-weight: bolder;
-  margin-left: 100px;
+  padding-left: 50px;
+  padding-right: 100px;
 }
 
 /* typing + erasing loop for part1 */
@@ -73,31 +79,67 @@
 }
 
 .fbla-text {
-  margin-left: 100px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.our-chapter {
+  font-size: 8rem;
+  font-weight: bolder;
+}
+
+.fbla-section {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* Logo */
+.fbla-logo {
+  height: 100%;       /* match text container height */
+  width: auto;        /* maintain aspect ratio */
+  max-width: 200px;   /* prevent it from being too wide */
+  object-fit: contain;
+  margin-right: 1rem; /* spacing between logo and text */
 }
 
 @media (max-width: 768px) {
   .title {
     font-size: 70px;
   }
-  
-  .fbla {
-    font-size: 5rem;
-    margin: 0;
+
+  .fbla-section {
+    flex-direction: column;
+    align-items: center;  /* center horizontally */
+    text-align: center;   /* center text */
+  }
+
+  .fbla-logo {
+    max-width: 50%;    /* shrink on mobile */
+    height: auto;      /* don't force height */
+    margin-bottom: 1rem; /* space below logo */
+    margin-right: 0;   /* remove right margin */
   }
 
   .fbla-text {
-    margin: 0;
-    text-align: center;
-    padding: 10px;
-    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .fbla {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .our-chapter {
+    font-size: 7rem;
   }
 }
 
 .hidden {
   opacity: 0;
   filter: blur(5px);
-  transform: translateY(100%);
+  transform: translateY(50%);
   transition: all 1s;
 }
 
@@ -107,7 +149,39 @@
   transform: translateY(0);
 }
 
-.fbla-logo {
-  width: 30%;
+.carousel-item img {
+  max-width: 600px; /* shrink image */
+  height: auto;
+  margin: 0 auto;   /* center inside carousel */
 }
 
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0C6DFD;   /* bright orange */
+  opacity: 0.95;
+  border: 3px solid white;     /* makes it pop more */
+}
+
+.carousel-control-prev {
+  left: 20px;
+}
+
+.carousel-control-next {
+  right: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* arrows stay white */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #ffc107;   /* bright yellow on hover */
+}
