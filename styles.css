@@ -86,6 +86,13 @@
 .our-chapter {
   font-size: 8rem;
   font-weight: bolder;
+  padding-left: 1rem;
+}
+
+.announcements {
+  font-size: 5rem;
+  font-weight: bolder;
+  padding-left: 1rem;
 }
 
 .fbla-section {
@@ -101,6 +108,7 @@
   max-width: 200px;   /* prevent it from being too wide */
   object-fit: contain;
   margin-right: 1rem; /* spacing between logo and text */
+  margin-left: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -133,6 +141,12 @@
 
   .our-chapter {
     font-size: 7rem;
+    padding: 0;
+  }
+
+  .announcements {
+    font-size: 3rem;
+    padding: 0;
   }
 }
 
@@ -184,4 +198,20 @@
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   background-color: #ffc107;   /* bright yellow on hover */
+}
+
+.section-1 {
+  background-color: #FFFFEA;
+}
+
+.section-2 {
+  background-color: #D8D8D8;
+}
+
+.carousel {
+  background-color: #0D1B2A;
+}
+
+.section-3 {
+  background-color: #C6DEA6;
 }
